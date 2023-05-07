@@ -1,0 +1,133 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>河北圣顺环保科技人力资源管理</title>
+
+    <style class="cp-pen-styles">
+        * {
+            margin: 0;
+            padding: 0;
+            border: none;
+            list-style: none;
+        }
+
+        body {
+            background: url("../static/images/6.jpg");
+            font-family: arial;
+            font-size: 13px;
+        }
+        form {
+            width: 400px;
+            height: 100%;
+            padding: 25px 50px 25px 50px;
+            background: lightcyan;
+            display: block;
+            margin: 100px auto;
+            border-radius: 3px;
+            color: rgb(0, 0, 0);
+
+            margin-top: 15%;
+        }
+        form fieldset {
+            margin: 25px 0;
+        }
+        form h3{
+            text-align: center;
+        }
+        .select_wrapper {
+            background: #a8e3ee url("../static/images/arrow.png") no-repeat top 15px right 12px;
+            line-height: 36px;
+            border-radius: 3px;
+            cursor: pointer;
+            position: relative;
+        }
+        .select_wrapper:hover {
+            background: #cae7f3 url("../static/images/arrow.png") no-repeat top 15px right 12px;
+        }
+
+        .select_wrapper span {
+            display: block;
+            margin: 0 30px 0 15px;
+        }
+
+        .select_wrapper .select_inner {
+            background: #fff;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+            color: #687278;
+            display: none;
+            position: absolute;
+            left: 0;
+            top: -100%;
+            width: 100%;
+            z-index: 3;
+        }
+
+        .select_wrapper .select_inner li {
+            border-bottom: 1px solid #eee;
+            padding: 0 15px;
+        }
+
+        .select_wrapper .select_inner li:hover {
+            background: #eee;
+        }
+
+        .select_wrapper .select_inner li:last-child {
+            border: none;
+            border-radius: 0 0 5px 5px;
+        }
+
+        .select_wrapper .select_inner li:first-child {
+            border-radius: 5px 5px 0 0;
+        }
+    </style>
+
+</head>
+<body>
+
+<form action='#' method='post'>
+    <h3 id="title">河北圣顺环保科技人力资源管理系统</h3>
+    <fieldset>
+        <select class="selectbox" id="" name="">
+            <option value="超级管理员">超级管理员
+            <option value="管理员">管理员
+        </select>
+    </fieldset>
+</form>
+
+<script type="text/javascript" src="../static/js/jquery.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('.selectbox').wrap('<div class="select_wrapper"></div>')
+        $('.selectbox').parent().prepend('<span>' + $(this).find(':selected').text() + '</span>');
+        $('.selectbox').parent().children('span').width($('.selectbox').width());
+        $('.selectbox').css('display', 'none');
+        $('.selectbox').parent().append('<ul class="select_inner"></ul>');
+        $('.selectbox').children().each(function () {
+            var opttext = $(this).text();
+            var optval = $(this).val();
+            $('.selectbox').parent().children('.select_inner').append('<li id="' + optval + '">' + opttext + '</li>');
+        });
+
+        $('.selectbox').parent().find('li').on('click', function () {
+            var cur = $(this).attr('id');
+            $('.selectbox').parent().children('span').text($(this).text());
+            $('.selectbox').children().removeAttr('selected');
+            $('.selectbox').children('[value="' + cur + '"]').attr('selected', 'selected');
+            if ($('.selectbox').val() == '超级管理员') {
+                window.location.href = 'SuperadminLogin.html';
+            } else {
+                window.location.href = 'AdminLogin.html';
+            }
+            // alert($('.selectbox').children('[value="'+cur+'"]').text());
+            // alert($('.selectbox').val());
+        });
+
+        $('.selectbox').parent().on('click', function () {
+            $(this).find('ul').slideToggle('fast');
+        });
+    });
+</script>
+
+</body>
+</html>

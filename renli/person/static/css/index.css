@@ -1,0 +1,60 @@
+/* 背景设置 */
+#box{
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    background: url("../images/5-120601094K8.gif");
+    margin: 0px auto;
+}
+
+/* 登录人员选项设置 */
+#personbtn{
+    position: relative;
+    left:50%;
+    top: 50%;
+    margin-top: -98.6px;
+    margin-left: -9.4px;
+}
+
+/* 公司名称格式显示 */
+#title{
+    position: fixed;
+    left:50%;
+    top: 50%;
+    margin: 0px;
+    text-align: center;
+    font-size: 40px;
+    /* font-size: 12px; */
+    margin-top: -200px;
+    margin-left: -300px;
+}
+
+/* 确定按钮 */
+#surebtn{
+    width: 80px;
+    height: 40px;
+    color: white;
+    font-size: 20px;
+    border-radius: 10px;
+    outline: none;
+    margin-left: -60px;
+}
+#surebtn{
+    background: lightblue;
+}
+
+/* 身份选择按钮 */
+#chooseperson{
+    width:130px;
+    height: 40px;
+    color: black;
+    font-size: 20px;
+    border-radius: 10px;
+    outline: none;
+    margin-left: -80px;
+}
+#chooseperson{
+    background: white;
+}

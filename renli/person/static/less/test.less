@@ -1,0 +1,17 @@
+li {
+    width: 100px;
+
+    .pub(14px);
+
+    a {
+        text-decoration: none;
+    }
+
+    &:hover {
+        background-color: #fff;
+    }
+}
+
+.pub(@size) {
+    font-size: @size;
+}
